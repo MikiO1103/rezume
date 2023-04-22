@@ -1,0 +1,72 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+{{#with program.excursion}}
+    <section>
+        <div>
+            <h1><u>Excursion</u></h1>
+            <ul>
+                <li><b>Name:</b> {{name}}</li>
+                {{#with location}}
+                    <li><b>City:</b> {{city}}</li> 
+                    <li><b>Country:</b> {{country}}</li>  
+                {{/with}}
+                <li><b>Date:</b> <date> {{date}} </date> </li> 
+            </ul>
+        </div>
+    </section>
+
+            <br>
+            <hr>
+
+            {{#each program}}
+               <section>
+                    <h2>Program:</h2>
+                    <ul>
+                        <li><b>Name:</b> {{name}}</li>
+                        <li><b>Type:</b> {{type}}</li>
+                        <li><b>Duration:</b> {{duration}}</li>
+                    </ul>
+                    
+                    {{#with details.museum}}
+                        <h3>Details:</h3>
+                        <ol>
+                            <li>
+                                <b>Name: {{name}}</b>
+                            </li>
+                        </ol>
+                            
+                            {{#with location}}
+                                <h4>Location</h4>
+                                <ul>
+                                    <li>address: {{address}}</li>
+                                    <li>city: {{city}}</li>
+                                    <li>country: {{country}}</li>
+                                </ul>
+
+                            {{/with}}
+
+                        {{#each exhibits}}
+                        <h4>Exhibits:</h4>
+                        <ol>
+                            <li>{{name}}</li>
+                            <li>{{artist}}</li>
+                            <li>{{description}}</li>
+                        </ol>
+                        {{/each}}
+
+                    {{/with}}
+               </section>
+            
+            {{/each}}
+               
+
+{{/with}}
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}

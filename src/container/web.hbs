@@ -1,0 +1,40 @@
+{{#with web}}
+
+    {{#each languages}}
+        <ul>
+            <li>{{name}}</li>
+            <li>{{version}}</li>dsf
+            <li>{{description}}</li>
+        </ul>
+
+            <hr>
+            <hr>
+
+            {{#each elements}}
+                <ul>
+                    <li>{{name}}</li>
+                    <li>{{description}}</li>
+                </ul>
+            {{/each}}
+
+            {{#each attributes}}
+                <ul>
+                    <li>{{name}}</li>
+                    <li>{{description}}</li>
+                </ul>
+            {{/each}}
+
+
+            {{#each properties/values}}
+                <ul>
+                    <li>{{name}}</li>
+                    <li>{{description}}</li>
+                    <li>{{value}}</li>
+                </ul>
+            {{/each}}
+
+    {{/each}}
+
+
+{{/with}}
+
